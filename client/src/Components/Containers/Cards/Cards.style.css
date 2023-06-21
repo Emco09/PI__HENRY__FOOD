@@ -1,0 +1,10 @@
+.cardscontainer{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 33% 33% 33% ; 
+    background-image: url(https://ig.com.ar/wp-content/uploads/2019/10/67-scaled.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-size: cover;    
+}

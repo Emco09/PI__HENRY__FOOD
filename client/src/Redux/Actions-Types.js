@@ -1,0 +1,9 @@
+export const GET_RECIPES = 'GET_RECIPES';
+export const GET_DIETS = 'GET_DIETS';
+export const ID_RECIPE = 'ID_RECIPE';
+export const FILTER = 'FILTER';
+export const SORT = 'SORT';
+export const DIET = 'DIET';
+export const RESET = 'RESET';
+export const INFO = 'INFO';
+export const GET_NAME = 'GATE_NAME';

@@ -1,0 +1,39 @@
+.Detail{
+    background-image: url(https://ig.com.ar/wp-content/uploads/2019/10/67-scaled.jpg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+
+.DetailContainer{
+    display: grid;
+    grid-template-columns: 40% auto;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    height: 95%;
+    border: 1px solid black;
+    background-color: rgba(240, 248, 255, 0.644);
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    overflow: auto;
+}
+.Container__image{
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.Container__Text{
+    padding: 10px;
+}
+.Container__Steps{
+    display: flex;
+    
+}
+.Container__diets{
+    display: flex;
+    gap: 10px;
+}

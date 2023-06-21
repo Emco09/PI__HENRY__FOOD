@@ -1,0 +1,22 @@
+.cardconteiner{
+    
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0.677);
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
+    backdrop-filter: blur(4px);
+    
+    
+}
+
+.card__image{
+    text-align: center;
+    border-radius: 10px;
+}
+.card__image-image{
+    width: 250px;
+}
+

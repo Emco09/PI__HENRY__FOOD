@@ -1,0 +1,79 @@
+.landingcontainer{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    background-image:url("../../src/public/fondolanding.jpg");
+    box-sizing: border-box;
+    width: auto;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+    
+    
+}
+
+
+.card{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items: center;        
+    width: 980px;
+    height: 680px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(240, 248, 255, 0.677);
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+}
+
+.containerimage{
+  width: 491px;
+  
+
+
+}
+
+.containerimage{
+    width: 100%;
+
+}
+
+/* .landingcontainer{
+    display:grid;
+    grid-template-columns: 30% auto;
+    
+    background-size: cover;
+    align-content: center;
+    justify-content: center;
+    width: auto;
+    height: 100vh;
+    
+} */
+/* 
+.containercentral{
+    display: grid;
+    grid-template-columns: 30% auto;
+    background-color: rgba(255, 235, 205, 0.429);
+    align-content: center;
+    justify-content: center;
+    gap: 40px;
+    box-sizing: border-box;
+} */
+/* .containertext{ 
+    text-align: justify;
+    
+   
+    
+    
+}
+
+
+
+
+.containerimage{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    margin-left: 20px;
+} */
