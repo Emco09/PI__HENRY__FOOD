@@ -24,7 +24,7 @@ const dbDiets = async () => {
     let response = [...dataarr].forEach(function (elemento) {
         return Diets.create({ nombre: elemento })
     })//Se utiliza el método forEach en el array de dietas para crear y guardar registros en la base de datos utilizando el modelo Diets. Cada elemento del array se utiliza para crear un nuevo registro en la tabla de dietas.
-    console.log(array);
+    
     return array //Finalmente, se devuelve el array de dietas como resultado de la función.
 }
 

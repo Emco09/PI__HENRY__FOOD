@@ -7,10 +7,9 @@ const {results} = require('../utils/los100')
 //Este controlador obtiene las primeras 100 recetas de una API utilizando una API key, mapea la respuesta para extraer información relevante de cada receta y combina esa información con los datos obtenidos de una base de datos. El resultado final es un array que contiene la información combinada de las recetas de la API y la base de datos.
 const allrecipescontroller = async () => {
 
-    /* const response = (await axios(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)).data.results */
+    /* const response = (await axios(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)).data.results  */
     const response = results
-    console.log(results);
-
+    
     const apiData = response.map((recipe) => {
         return {
             id: recipe.id,

@@ -59,11 +59,12 @@ const Form = () => {
     const updatedDiets = [...form.typediet];
     console.log(Object.entries(form).length);
     if (Object.entries(form).length) {
-      /* const response =await axios.post("http://localhost:3001/recipes",form) */
+      const response =await axios.post('http://localhost:3001/recipes',form)
+      console.log(response); 
       alert("se mandaron los datos ")
       history.push("/home"); // Redireccionar a la página "/home"
     }else{
-      setError(validation({ ...form}))
+      setError(validation({ ...errors}))
     }
     
   }
