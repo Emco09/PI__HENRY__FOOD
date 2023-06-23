@@ -8,9 +8,9 @@ const { searchRecipeByName } = require('../utils/dbSearch');
 // Esta función nameRecipe busca recetas por nombre. Si se proporciona un nombre, realiza una solicitud a la API para obtener las recetas que coinciden con el nombre y combina los resultados con los datos de una base de datos. Si no se proporciona un nombre, obtiene todas las recetas disponibles.
 const nameRecipe = async (name) => {
     if (name) {
-         const query = encodeURIComponent(name.toLowerCase()); // Convertimos el nombre a minúsculas y lo codificamos para la URL
+        const query = encodeURIComponent(name.toLowerCase()); // Convertimos el nombre a minúsculas y lo codificamos para la URL
         const recipe = (await axios(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${API_KEY}&addRecipeInformation=true&number=86`)).data.results
-       
+
         const apiResults = recipe.map((recipe) => {
             return {
                 id: recipe.id,
@@ -27,21 +27,28 @@ const nameRecipe = async (name) => {
                 typediet: recipe.diets,
             }
         })
-        
+        console.log(apiResults);
         const dbResults = await searchRecipeByName(name.toLowerCase()); // Buscamos en la base de datos con el nombre en minúsculas
-        
-        const combinedResults = [...apiResults, ...dbResults]; // Combinamos los resultados de la API y de la base de datos
-        console.log(combinedResults);
+        console.log(dbResults);
+
+        if (dbResults === [null]) {
+            
+            return apiResults
+        } else {
+            const combinedResults = [...apiResults, ...dbResults]; // Combinamos los resultados de la API y de la base de datos
+            return combinedResults
+        }
+
 
         return combinedResults;
- 
-       
+
+
     } else {
         return await allrecipescontroller()
     }
 
 
-    
+
 }
 
 module.exports = {

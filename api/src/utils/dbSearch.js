@@ -18,21 +18,24 @@ const searchRecipeByName = async (name) => {
     }
   });
   data.push(dbInfo)
-  console.log(data);
-  if (data.length > 0) {
-    const flatData = data.map(recipe => ({
-      id: recipe.id,
-      nombre: recipe.nombre,
-      summary: recipe.summary,
-      healthscore: recipe.Healthscore,
-      steps: recipe.steps,
-      image: recipe.image,
-      typediet: [...new Set(recipe.Diets.map(diet => diet.nombre))]
-    }));
+    
+    const flatData = data.map(recipe => {
+      if (recipe) {
+        return {
+          id: recipe.id,
+          nombre: recipe.nombre,
+          summary: recipe.summary,
+          healthscore: recipe.Healthscore,
+          steps: recipe.steps,
+          image: recipe.image,
+          typediet: [...new Set(recipe.Diets.map(diet => diet.nombre))]
+        };
+      }
+      return null;
+    });
+    
     return flatData
-  } else {
-    return []
-  }
+  
 
 };
 
