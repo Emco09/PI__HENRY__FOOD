@@ -28,8 +28,8 @@ module.exports = (sequelize) => {
       allowNull: true,
     },
     steps: {
-      type: DataTypes.TEXT,
-      allowNull: true,// Valor por defecto: un array vacío
+      type: DataTypes.ARRAY(DataTypes.JSONB), // Tipo de datos ARRAY de tipo STRING
+      allowNull: false,
     },
   });
 };

@@ -18,7 +18,7 @@ const Form = () => {
     image: "https://img.freepik.com/vector-premium/icono-foto-o-camara-aislado-sobre-fondo-blanco-ilustracion-vectorial_736051-267.jpg",
     summary: "",
     Healthscore: "0",
-    steps: "",
+    steps: [],
     typediet: [],
   })
 
@@ -57,17 +57,25 @@ const Form = () => {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     const updatedDiets = [...form.typediet];
-    console.log(Object.entries(form).length);
     if (Object.entries(form).length) {
       const response =await axios.post('http://localhost:3001/recipes',form)
-      console.log(response); 
       alert("se mandaron los datos ")
       history.push("/home"); // Redireccionar a la página "/home"
     }else{
       setError(validation({ ...errors}))
-    }
-    
+    }    
   }
+
+  const handleStepsChange = (event) => {
+    const { value } = event.target;
+    const stepsArray = value.split('\n').map((step, index) => ({
+      number: index + 1,
+      step: step.trim()
+    }));
+    console.log(stepsArray);
+    setForm((prevForm) => ({ ...prevForm, steps: stepsArray }));
+  };
+
 
   return (
     <section className='formcontainer'>
@@ -130,8 +138,8 @@ const Form = () => {
             rows="5"
             cols="20"
             type="text"
-            value={form.steps}
-            onChange={changehandler}
+            value={form.steps.map(step => step.step).join('\n')}
+            onChange={handleStepsChange}
             name='steps'
             placeholder='1: Ponemos una sarten a calantar ......'
             required

@@ -50,11 +50,14 @@ const Home = () => {
       <Cards
         data={currentRecipes}
       />
+      <section className='home__paginado'>
       <Paginado
         data={data}
         recipesPerPage={recipesPerPage}
         paginado={paginado}
       />
+      </section>
+     
 
 
     </section>

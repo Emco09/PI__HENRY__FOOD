@@ -11,6 +11,7 @@
 .DetailContainer{
     display: grid;
     grid-template-columns: 40% auto;
+    
     justify-items: center;
     align-items: center;
     width: 80%;

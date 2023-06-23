@@ -1,5 +1,11 @@
 .homecontainer{
     text-align: center;
+    
 
     
+}
+.home__paginado{
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }

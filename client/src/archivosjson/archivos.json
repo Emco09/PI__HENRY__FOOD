@@ -1,45 +1,28 @@
 [
   {
-    "id": 12,
-    "nombre": "Roasted Peppers with Boquerones",
-    "summary": "Roasted Peppers with Boquerones takes approximately <b>75 hours</b> from beginning to end. This recipe serves 12. Watching your figure? This gluten free, dairy free, fodmap friendly, and pescatarian recipe has <b>28 calories</b>, <b>2g of protein</b>, and <b>0g of fat</b> per serving. For <b>58 cents per serving</b>, this recipe <b>covers 10%</b> of your daily requirements of vitamins and minerals. If you have boquerones, bell peppers, sherry vinegar, and a few other ingredients on hand, you can make it. It works well as a side dish. 1 person were impressed by this recipe. It is brought to you by Epicurious. Overall, this recipe earns a <b>great spoonacular score of 81%</b>. Similar recipes include <a href=\"https://spoonacular.com/recipes/marinated-boquerones-10\">Marinated Boquerones</a>, <a href=\"https://spoonacular.com/recipes/boquerones-with-green-olives-and-orange-1765635\">Boquerones With Green Olives and Orange</a>, and <a href=\"https://spoonacular.com/recipes/tomato-and-boquerones-salad-with-garlicky-breadcrumbs-49\">Tomato And Boquerones Salad With Garlicky Breadcrumbs</a>.",
-    "healtscore": 47,
+    "id": "6c14243a-8bf4-448c-adad-3d9d780ae24d",
+    "nombre": "sadfsdf",
+    "summary": "sdfsdfsdfdfsf",
+    "healthscore": "11",
     "steps": [
       {
-        "number": 1,
-        "step": "Preheat broiler."
+        "step": "asdasdasd",
+        "number": 1
       },
       {
-        "number": 2,
-        "step": "Broil bell peppers on a broiler pan about 5 inches from heat, turning occasionally with tongs, until skins are blackened, 15 to 20 minutes."
+        "step": "asdasdasd",
+        "number": 2
       },
       {
-        "number": 3,
-        "step": "Transfer to a large bowl and cover bowl tightly with plastic wrap, then let steam 20 minutes."
-      },
-      {
-        "number": 4,
-        "step": "When peppers are cool enough to handle, peel them, reserving all juices in bowl, and discard stems and seeds."
-      },
-      {
-        "number": 5,
-        "step": "Cut peppers lengthwise into 1/4-inch-wide strips."
-      },
-      {
-        "number": 6,
-        "step": "Pour pepper juices through a sieve into another bowl, then add vinegar and sugar to juices, stirring until sugar is dissolved, then stir in peppers. Marinate peppers at room temperature, stirring occasionally, at least 2 hours."
-      },
-      {
-        "number": 7,
-        "step": "Spoon peppers and juices into a shallow bowl and arrange anchovy strips decoratively on top."
+        "step": "",
+        "number": 3
       }
     ],
-    "image": "https://spoonacular.com/recipeImages/12-556x370.jpg",
+    "image": "https://img.freepik.com/vector-premium/icono-foto-o-camara-aislado-sobre-fondo-blanco-ilustracion-vectorial_736051-267.jpg",
     "typediet": [
       "gluten free",
       "dairy free",
-      "fodmap friendly",
-      "pescatarian"
+      "lacto ovo vegetarian"
     ]
   }
 ]

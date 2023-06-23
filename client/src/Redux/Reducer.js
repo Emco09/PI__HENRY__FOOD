@@ -1,11 +1,12 @@
-import { GET_RECIPES, FILTER, SORT, DIET, RESET, INFO, GET_DIETS, GET_NAME } from "./Actions-Types";// Importa los tipos de acciones que se utilizarán
+import { GET_RECIPES, FILTER, SORT, DIET, RESET, INFO, GET_DIETS, GET_NAME, GET_ID } from "./Actions-Types";// Importa los tipos de acciones que se utilizarán
 
 // Define el estado inicial de la aplicación.
 const initialState = {
   recipes: [],
   dataorigin: [],
   copyrecipes: [],
-  diets: []
+  diets: [],
+  idrecipe: [],
 };
 
 // Es una función que recibe el estado actual y una acción, y devuelve el nuevo estado actualizado. 
@@ -34,9 +35,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
       };
     case FILTER:
       //Este caso maneja la acción FILTER. Filtra las recetas en función del tipo de dieta proporcionado en el payload de la acción.
-      const allRecipesFiltered = state.copyrecipes.filter((objeto, index, array) => {
-        objeto.typediet.includes(payload)
-      });
+      const allRecipesFiltered = state.copyrecipes.filter(objeto => objeto.typediet.includes(payload));
+
       return {
         ...state,
         recipes: allRecipesFiltered,
@@ -75,6 +75,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
         return { ...state, recipes: infoFilt[1] }
       } else {
         return { ...state, recipes: infoFilt[0] }
+      };
+    case GET_ID:
+      return {
+        ...state,
+        idrecipe: payload
       };
 
     default:

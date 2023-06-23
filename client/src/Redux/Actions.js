@@ -1,9 +1,9 @@
 import axios from 'axios'; //Importa el módulo axios para realizar solicitudes HTTP.
-import { GET_RECIPES, GET_DIETS, FILTER, SORT, DIET, RESET, INFO, GET_NAME } from './Actions-Types';//Importa los tipos de acciones definidos en el archivo 
+import { GET_RECIPES, GET_DIETS, FILTER, SORT, DIET, RESET, INFO, GET_NAME, GET_ID } from './Actions-Types';//Importa los tipos de acciones definidos en el archivo 
 import allrecipes from '../archivosjson/allrecipes.json';
 
 //Define la acción getRecipes. Esta acción es una función asíncrona que realiza una solicitud GET a la URL 'http://localhost:3001/recipes' para obtener los datos de las recetas. Luego, actualiza el estado utilizando la acción GET_RECIPES y envía los datos de las recetas y una versión filtrada combinada de los datos de la API y de la base de datos como payload.
-export const getRecipes = (props) => {
+export const getRecipes = () => {
     return async function (dispatch) {
         const recipes = (await axios.get('http://localhost:3001/recipes')).data
         /* const recipes = allrecipes */
@@ -17,17 +17,15 @@ export const getRecipes = (props) => {
 export const getDiets = () => {
     return async function (dispatch) {
         const diets = (await axios.get('http://localhost:3001/diets')).data
-        /* const diets = ["gluten free", "dairy free", "fodmap friendly", "pescatarian"] */
         dispatch({ type: GET_DIETS, payload: diets })
     }
 }
 //Define la acción getName. Esta acción recibe un nombre como argumento, que no se utiliza en el código actual. Esta acción está comentada y no se realiza ninguna operación.
 export const getName = (name) => {
-    console.log(name, 'estoo es la action');
-    return function (dispatch) {
-        /* const namerecipe =(await axios.get(`http://localhost:3001/diets${name}`)) */
-        /* dispatch({type:GET_NAME,payload:namerecipe}) */
-
+    return async function (dispatch) {
+        const namerecipe = (await axios.get(`http://localhost:3001/recipes?name=${name}`)).data
+        console.log(namerecipe);
+        dispatch({ type: GET_NAME, payload: namerecipe })
     }
 
 }
@@ -50,6 +48,13 @@ export const reset = (order) => {
 //Define la acción infoApiDb. Esta acción recibe una fuente de datos como argumento y envía una acción de tipo INFO con la fuente de datos proporcionada como payload.
 export const infoApiDb = (order) => {
     return { type: INFO, payload: order }
+}
+export const infoId = (id) => {
+    return async function (dispatch) {
+        const recipe = (await axios.get(`http://localhost:3001/recipes/${id}`)).data
+        console.log(recipe);
+        dispatch({ type: GET_ID, payload: recipe })
+    }
 }
 
 //En resumen, el archivo Actions.js define un conjunto de acciones que interactúan con el estado de la aplicación. Algunas acciones realizan solicitudes HTTP utilizando axios para obtener datos y luego actualizan el estado utilizando los tipos de acciones definidos en Actions-Types.js.
