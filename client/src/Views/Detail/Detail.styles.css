@@ -10,10 +10,9 @@
 
 .DetailContainer{
     display: grid;
-    grid-template-columns: 40% auto;
-    
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: 40% auto;    
+/*     justify-items: center;
+    align-items: center; */
     width: 80%;
     height: 95%;
     border: 1px solid black;
@@ -22,11 +21,12 @@
     backdrop-filter: blur(10px);
     overflow: auto;
 }
-.Container__image{
-    box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
-    border-radius: 10px;
-    overflow: hidden;
-}
+.Container__image {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+} 
 .Container__Text{
     padding: 10px;
 }
@@ -37,4 +37,10 @@
 .Container__diets{
     display: flex;
     gap: 10px;
+}
+.container__button{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
 }

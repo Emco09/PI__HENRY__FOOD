@@ -1,6 +1,7 @@
-.formcontainer{
+.formcontainer {
     display: grid;
     align-items: center;
+    justify-content: center;
     grid-template-rows: 10% auto 20%;
     border: 1px solid white;
     width: 600px;
@@ -9,5 +10,33 @@
     box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    
+
+}
+
+.form__nombre {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form__imagen {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form__summary {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form__healtscore {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form__steps {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+span{
+    color: red;
 }

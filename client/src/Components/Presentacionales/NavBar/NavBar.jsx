@@ -7,13 +7,20 @@ import FilterInfo from '../../Containers/Filters/FilterInfo'
 import FilterDiets from '../../Containers/Filters/FilterDiets'
 
 
-const NavBar = () => {
+const NavBar = ({ setCurrentPage }) => {
+
   return (
     <section className='navbar'>
       <section className='navbar__options'>
-        <Order />
-       <FilterInfo />
-        <FilterDiets />
+        <Order
+          setCurrentPage={setCurrentPage}
+        />
+        <FilterDiets
+          setCurrentPage={setCurrentPage}
+        />
+        <FilterInfo
+          setCurrentPage={setCurrentPage}
+        />
       </section >
       <SearchBar />
       <Create />

@@ -2,7 +2,7 @@
     display:grid;
     justify-content: center;
     align-content: center;
-    background-image:url("../../src/public/fondolanding.jpg");
+    background-image:url("../../public/fondolanding.jpg");
     box-sizing: border-box;
     width: auto;
     height: 100vh;

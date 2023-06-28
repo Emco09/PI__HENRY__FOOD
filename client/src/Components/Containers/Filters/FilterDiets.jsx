@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { filterCards } from '../../../Redux/Actions'
 
 
-const FilterDiets = () => {
+const FilterDiets = ({setCurrentPage}) => {
     const dispatch = useDispatch()
 
     const handleFilter = (event) => {
         dispatch(filterCards(event.target.value))
+        setCurrentPage(1)
     }
 
     const data = useSelector(state => state.diets)

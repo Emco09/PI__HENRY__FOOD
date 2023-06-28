@@ -1,21 +1,24 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { filterCards, sortCards, healtCards, infoApiDb } from '../../../Redux/Actions.js'
+import { sortCards, healtCards } from '../../../Redux/Actions.js'
 import './Order.style.css'
 
-const Order = () => {
-    const dispatch = useDispatch()
+
+
+
+const Order = ({setCurrentPage}) => {
+       const dispatch = useDispatch()
 
     const handleOrder = (event) => {
         dispatch(sortCards(event.target.value))
+        setCurrentPage(1)
     }
 
     const handlerHealt = (event) => {
         dispatch(healtCards(event.target.value))
+        setCurrentPage(1)
     }
-    const handlerApiDb = (event) => {
-        dispatch(infoApiDb(event.target.value))
-    }
+
 
 
 

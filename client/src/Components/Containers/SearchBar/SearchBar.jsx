@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getName } from '../../../Redux/Actions'
+import './SearchBar.style.css'
 
 
 
@@ -18,15 +19,15 @@ const Searchbar = () => {
   //se setea el estado en un string vacio 
   const OnSearch = (name) => {
     dispatch(getName(name))
-
+    setName("")
   }
 
 
   return (
 
-    <div className='buscar'>
-      <input type="search" placeholder='Buscar' value={name} onChange={handleInputChange}></input>
-      <button className='button' onClick={() => OnSearch(name)}>puchale</button>
+    <div className='container__Search'>
+      <input type="search" placeholder='Search By Name Recipe....' value={name} onChange={handleInputChange}></input>
+      <button  onClick={() => OnSearch(name)}>Search</button>
     </div>
 
   )

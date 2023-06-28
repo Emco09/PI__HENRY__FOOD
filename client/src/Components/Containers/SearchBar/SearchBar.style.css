@@ -1,0 +1,21 @@
+.container__Search {
+   padding-top: 10px;
+}
+
+.container__Search input {
+    width: 250px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: #D2D4D5;
+    color: #1f2221;
+}
+
+button:hover {
+    background-color: #5D6664;
+    color: #dfe7eb;
+
+}

@@ -1,8 +1,8 @@
 //importamos las views para poder enrutar
-import Landing from './Views/Landing';
-import Home from './Views/Home';
-import Create from './Views/Create';
-import Detail from './Views/Detail';
+import Landing from './Views/Landing/Landing';
+import Home from './Views/Home/Home';
+import Create from './Views/Create/Create';
+import Detail from './Views/Detail/Detail';
 
 //importamos Route Hook para poder usar las rutas
 import { Route } from 'react-router-dom';//importa el componente Route de la biblioteca react-router-dom, que se utilizará para definir las rutas de la aplicación.

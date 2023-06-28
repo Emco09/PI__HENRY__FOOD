@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Landing.styles.css'
-import imagen from '../public/platodepasta.jpg'
+import imagen from '../../public/platodepasta.jpg'
 
 
 

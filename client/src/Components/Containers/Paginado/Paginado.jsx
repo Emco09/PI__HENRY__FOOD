@@ -1,31 +1,42 @@
 import React from 'react'
-import './Paginado.style.css'
+import style from './Paginado.style.css'
 
-const Paginado = ({data,recipesPerPage,paginado}) => {
-        const pageNumber = [];
-   for (let i = 1; i <=Math.ceil(data.length/recipesPerPage); i++) {    
-    pageNumber.push(i)
-   }
-   
+const Paginado = ({ data, recipesPerPage, paginado, currentPage, setCurrentPage, currentRecipes }) => {
+    const pageNumber = [];
+    for (let i = 1; i <= Math.ceil(data.length / recipesPerPage); i++) {
+        pageNumber.push(i)
+    }
+    const prevpag = () => {
+        setCurrentPage(currentPage - 1)
+    }
+    const nextpag = () => {
+        setCurrentPage(currentPage + 1)
+    }
+    console.log(currentRecipes);
 
-  return (
-    
-        
+    return (
+
+
         <section className='paginado'>
-            <ul >
-                
+            <button disabled={currentPage === 1} onClick={prevpag}>
+                prev
+            </button>
+            <ul className='ulpaginado'>
                 {
                     pageNumber?.map(number => (
-                          <li key={number} className='numeros'>
-                              <a onClick={() => paginado(number)}> {number} </a>
-                          </li>
-                      ))
+                        <li key={number} className='numeros'>
+                            <button  onClick={() => paginado(number)}> {number} </button>
+                        </li>
+                    ))
                 }
             </ul>
-        </section>
+            <button disabled={currentRecipes.length < 9} onClick={nextpag}>
+                next
+            </button>
+        </section >
 
-    
-  )
+
+    )
 }
 
 export default Paginado

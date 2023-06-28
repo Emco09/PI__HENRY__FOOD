@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Form.styles.css'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
@@ -42,7 +42,7 @@ const Form = () => {
   }
 
   const changehandlerdiets = (event) => {
-    const { value, checked } = event.target;
+    const { value } = event.target;
     const updatedDiets = [...form.typediet];
     if (value) {
       updatedDiets.push(value);
@@ -56,14 +56,14 @@ const Form = () => {
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    const updatedDiets = [...form.typediet];
+
     if (Object.entries(form).length) {
-      const response =await axios.post('http://localhost:3001/recipes',form)
+      const response = await axios.post('http://localhost:3001/recipes', form)
       alert("se mandaron los datos ")
       history.push("/home"); // Redireccionar a la página "/home"
-    }else{
-      setError(validation({ ...errors}))
-    }    
+    } else {
+      setError(validation({ ...errors }))
+    }
   }
 
   const handleStepsChange = (event) => {
@@ -72,7 +72,6 @@ const Form = () => {
       number: index + 1,
       step: step.trim()
     }));
-    console.log(stepsArray);
     setForm((prevForm) => ({ ...prevForm, steps: stepsArray }));
   };
 
@@ -82,7 +81,7 @@ const Form = () => {
       <h1>Crea tu Receta</h1>
       <form className='form' onSubmit={handleOnSubmit}>
 
-        <div>
+        <div className='form__nombre'>
           <label >Nombre</label>
           <input
             value={form.nombre}
@@ -90,10 +89,11 @@ const Form = () => {
             name='nombre'
             placeholder='Webito con Jamon'
           />
-          <p>{errors.nombre}</p>
+          <span>{errors.nombre}</span>
         </div>
+        <br />
 
-        <div>
+        <div className='form__imagen'>
           <label >Imagen</label>
           <input
             type="text"
@@ -102,10 +102,11 @@ const Form = () => {
             name='image'
             placeholder='http://tuimage.jpg'
           />
-          <p>{errors.image}</p>
+          <span>{errors.image}</span>
         </div>
+        <br />
 
-        <div>
+        <div className='form__summary'>
           <label >Resumen del Plato</label>
           <textarea
             rows="5"
@@ -118,8 +119,9 @@ const Form = () => {
           />
           <span>{errors.summary}</span>
         </div>
+        <br />
 
-        <div>
+        <div className='form__healtscore'>
           <label >Healthscore</label>
           <input
             type="number"
@@ -131,8 +133,9 @@ const Form = () => {
           />
           <span>{errors.Healthscore}</span>
         </div>
+        <br />
 
-        <div>
+        <div className='form__steps'>
           <label >paso a paso</label>
           <textarea
             rows="5"
@@ -162,7 +165,7 @@ const Form = () => {
                     checked={form.typediet.includes(diet)}
                   />
                   <label htmlFor={diet}>{diet}</label>
-                  <span>{errors.typediet}</span>
+                  
                 </div>
               ))
             }
@@ -173,17 +176,17 @@ const Form = () => {
                 value={[]}
                 id="none"
                 onChange={changehandler}
-                checked={form.typediet.length === 0}
               />
               <label htmlFor="none">Ninguna</label>
+              <span>{errors.typediet}</span>
             </div>
           </div>
         </div>
         <section>
-        <button disabled={Object.values(errors).some((error) => error) }>Crear</button>
-      </section>
+          <button disabled={Object.values(errors).some((error) => error)}>Crear</button>
+        </section>
       </form>
-      
+
 
 
     </section>

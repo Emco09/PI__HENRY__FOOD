@@ -31,7 +31,7 @@ const validation = (form) => {
     if (Healthscore > 100)
         errors.Healthscore = 'solo puede tener un maximo de 100 puntos '
     //steps
-    if (!steps)
+    if (!steps.length)
         errors.steps = 'Debe contener los pasos de elaboracion'
     //typediet
     if (!typediet)

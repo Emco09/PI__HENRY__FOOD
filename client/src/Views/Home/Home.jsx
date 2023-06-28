@@ -1,11 +1,10 @@
 // Este código representa el componente "Home" de la aplicación. Aquí tienes una explicación de su funcionamiento:
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Cards from '../Components/Containers/Cards/Cards'
-import Paginado from '../Components/Containers/Paginado/Paginado'
-import NavBar from '../Components/Presentacionales/NavBar/NavBar'
-import { useLocation } from 'react-router-dom'
-import { getDiets, getRecipes } from '../Redux/Actions'
+import Cards from '../../Components/Containers/Cards/Cards'
+import Paginado from '../../Components/Containers/Paginado/Paginado'
+import NavBar from '../../Components/Presentacionales/NavBar/NavBar'
+import { getDiets, getRecipes } from '../../Redux/Actions'
 
 
 
@@ -16,15 +15,19 @@ const Home = () => {
   const indexOfLastRecipe = currentPage * recipesPerPage;
   const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
   const currentRecipes = data.slice(indexOfFirstRecipe, indexOfLastRecipe);// Cálculo de recetas actuales: Se calcula el índice de la última receta y el índice de la primera receta en función de la página actual y la cantidad de recetas por página. A partir de estos índices, se obtiene el subconjunto de recetas que se mostrarán en la página actual.
-  const location = useLocation();
+  console.log(currentPage,'current page');
 
+
+  const setCurrentPageWrapper = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const dispatch = useDispatch()
   //Efecto de carga inicial: El componente utiliza el hook useEffect para ejecutar ciertas acciones al cargar el componente. En este caso, se despachan las acciones getRecipes y getDiets utilizando la función dispatch. Estas acciones se encargan de obtener las recetas y los tipos de dieta desde el backend y almacenarlos en el estado de Redux.
   useEffect(() => {
     dispatch(getRecipes())
     dispatch(getDiets())
-    console.log('soy la home');
+    setCurrentPage(1)
   }, [dispatch])
 
 
@@ -46,18 +49,23 @@ const Home = () => {
           ? 
           : null
         } */}
-      <NavBar />
+      <NavBar
+        setCurrentPage={setCurrentPageWrapper}
+      />
       <Cards
         data={currentRecipes}
       />
-      <section className='home__paginado'>
-      <Paginado
-        data={data}
-        recipesPerPage={recipesPerPage}
-        paginado={paginado}
-      />
+      <section >
+        <Paginado
+          data={data}
+          recipesPerPage={recipesPerPage}
+          paginado={paginado}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPageWrapper}
+          currentRecipes={currentRecipes}
+        />
       </section>
-     
+
 
 
     </section>
