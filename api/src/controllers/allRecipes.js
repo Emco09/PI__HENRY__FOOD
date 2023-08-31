@@ -17,7 +17,7 @@ const allrecipescontroller = async () => {
             nombre: recipe.title,
             summary: recipe.summary,
             healtscore: recipe.healthScore,
-            steps: recipe.analyzedInstructions[0]?.steps.map((steps) => {
+            steps: recipe.analyzedInstructions.steps.map((steps) => {
                 return {
                     number: steps.number,
                     step: steps.step

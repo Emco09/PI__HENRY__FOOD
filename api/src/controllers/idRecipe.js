@@ -12,7 +12,7 @@ const idRecipe = async (id) => {
             nombre: response.data.title,
             summary: response.data.summary,
             healtscore: response.data.healthScore,
-            steps: response.data.analyzedInstructions[0]?.steps.map((steps) => {
+            steps: response.data.analyzedInstructions.steps.map((steps) => {
                 return {
                     number: steps.number,
                     step: steps.step

@@ -1,13 +1,13 @@
 .App {
   background-color: black;
 }
-img{
+/* img{
   width: 250px;
   height: 200px;
   box-shadow: 0 8px 32px 0 rgb(0, 0, 0);
   border-radius: 10px;
   overflow: hidden;
-}
+} */
 
 .App-logo {
   height: 40vmin;

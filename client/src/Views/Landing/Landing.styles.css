@@ -11,6 +11,12 @@
     
     
 }
+.containerimage{
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    /* overflow:hidden; */
+}
 
 
 .card{
@@ -27,17 +33,6 @@
     backdrop-filter: blur(10px);
 }
 
-.containerimage{
-  width: 491px;
-  
-
-
-}
-
-.containerimage{
-    width: 100%;
-
-}
 
 /* .landingcontainer{
     display:grid;
@@ -60,20 +55,17 @@
     gap: 40px;
     box-sizing: border-box;
 } */
-/* .containertext{ 
-    text-align: justify;
-    
-   
-    
-    
+.containertext{ 
+    text-align: center;
+    padding-right: 10px;
 }
 
 
 
 
-.containerimage{
+/* .containerimage{
     display: grid;
     align-content: center;
     justify-content: center;
     margin-left: 20px;
-} */
+}  */
