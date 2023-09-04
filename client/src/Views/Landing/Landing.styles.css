@@ -59,7 +59,11 @@
     text-align: center;
     padding-right: 10px;
 }
-
+/* @media (max-width: 800px) {
+    .landingcontainer{
+        
+    }
+  } */
 
 
 
